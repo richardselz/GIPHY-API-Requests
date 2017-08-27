@@ -45,7 +45,7 @@ function queryGIPHY(){
 			imageTag.attr("data-animated",imageAnimated.url);
 			imageTag.addClass("image");
 			var rating = responding[i].rating;
-			imageP.text("Rating: "+rating);
+			imageP.text("Rating: "+rating.toUpperCase());
 			imageDiv.append(imageTag);
 			imageDiv.append(imageP);
 			$("#images").append(imageDiv);
@@ -83,6 +83,10 @@ $(document).on("click", ".image", function() {
 	}else{
 		console.log("Error: Data-State was neither still or not still");
 	}
+});
+
+$("#resetImages").on("click",function(){
+	$("#images").text("");
 });
 
 createButtons();
